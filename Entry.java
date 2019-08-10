@@ -23,7 +23,7 @@ public Mainframe()
 	btn.setBounds(50,50,100,20);
 	add(btn);
 	btn.addActionListener(new ButtonHandler(this));
-	setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 }
 }
 class ButtonHandler implements ActionListener {
