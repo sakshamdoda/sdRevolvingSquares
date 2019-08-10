@@ -42,6 +42,7 @@ BouncingSquare3 objBouncingSquare3=new BouncingSquare3(frm);
 objBouncingSquare3.start();
 BouncingSquare4 objBouncingSquare4=new BouncingSquare4(frm);
 objBouncingSquare4.start();
+circle objcircle=new circle(frm);
 
 try {
 	objBouncingSquare1.join();
@@ -66,6 +67,10 @@ try {
 } catch (InterruptedException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
+}
+if(objBouncingSquare1.isAlive()==false)
+{
+	objcircle.start();
 }
 
 	}
@@ -173,4 +178,20 @@ class BouncingSquare4 extends Thread
 			}
 		}
 		}
+}
+class circle extends Thread
+{
+	Mainframe x;
+	public circle(Mainframe frm)
+	{
+		x=frm;
+	}
+	public void run()
+	{
+		Graphics grp=x.getGraphics();
+		grp.setXORMode(Color.white);
+	grp.setColor(Color.cyan);
+	grp.fillOval(200,300,50,50);
+	}
+	
 }
